@@ -75,13 +75,13 @@ function handleEdit(row) {
 
   if (isEditing) {
     updateList(row.id, { amount: amount.textContent, paid: paid.textContent })
+    location.reload()
   }
 }
 function updateList(listId, data) {
   const listElement = listStorage.find(({ id }) => id === listId)
   Object.assign(listElement, data)
   saveLocalStorage()
-  location.reload()
 }
 function handleDeleted(row) {
   if (window.confirm('Etas Seguro de eliminar el Elemento ')) {
